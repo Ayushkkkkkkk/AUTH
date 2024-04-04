@@ -11,6 +11,10 @@ public class Controller {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+
+			
+
 
 	@PostMapping("/register")
 	public String registerUser(@RequestBody User user) {
@@ -29,7 +33,7 @@ public class Controller {
 		if (existingUser != null && existingUser.getPassword().equals(user.getPassword())) {
 			return "Successful logging in";
 		} else {
-			return "Invalid username or password";
+			return "Please Register first";
 		}
 	}
 
